@@ -10,7 +10,7 @@ namespace UI
         public static void Configure()
         {
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appConfig");
+                .AddJsonFile("appConfig.json");
             ConfigurationInstance = builder.Build();
 
             EpamHost = ConfigurationInstance.GetSection("EpamHost").Value;
