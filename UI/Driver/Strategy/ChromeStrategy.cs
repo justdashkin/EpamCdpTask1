@@ -34,7 +34,7 @@ namespace UI.Driver.Strategy
             //baseChromeOptions.AddAdditionalCapability("selenoid:options", new Dictionary<String, Object>{
             //    {"enableVNC", true }
             //});
-            baseChromeOptions.AddAdditionalCapability("enableVNC", true, true);
+            baseChromeOptions.AddAdditionalCapability("enableVideo", true, true);
             RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), baseChromeOptions);
             return driver;
             //new ChromeDriver(Directory.GetCurrentDirectory(), baseChromeOptions, TimeSpan.FromMinutes(10));
