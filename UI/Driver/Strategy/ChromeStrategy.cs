@@ -30,7 +30,7 @@ namespace UI.Driver.Strategy
             baseChromeOptions.AddArgument("--start-maximized");
             baseChromeOptions.AddUserProfilePreference("intl.accept_languages", "nl");
             baseChromeOptions.AddUserProfilePreference("disable-popup-blocking", "true");
-            RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), baseChromeOptions);
+            RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:8080/wd/hub"), baseChromeOptions);
             return driver;
             //new ChromeDriver(Directory.GetCurrentDirectory(), baseChromeOptions, TimeSpan.FromMinutes(10));
         }
