@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Text;
-using AngleSharp;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using WebDriverManager;
@@ -31,13 +25,10 @@ namespace UI.Driver.Strategy
             baseChromeOptions.AddArgument("--start-maximized");
             baseChromeOptions.AddUserProfilePreference("intl.accept_languages", "nl");
             baseChromeOptions.AddUserProfilePreference("disable-popup-blocking", "true");
-            //baseChromeOptions.AddAdditionalCapability("selenoid:options", new Dictionary<String, Object>{
-            //    {"enableVNC", true }
-            //});
+            baseChromeOptions.AddAdditionalCapability("enableLog", true, true);
             baseChromeOptions.AddAdditionalCapability("enableVideo", true, true);
             RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), baseChromeOptions);
             return driver;
-            //new ChromeDriver(Directory.GetCurrentDirectory(), baseChromeOptions, TimeSpan.FromMinutes(10));
         }
 
         public IDriverConfig GetDriverConfig()
