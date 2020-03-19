@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using WebDriverManager;
@@ -16,7 +18,7 @@ namespace UI.Driver.Strategy
             new DriverManager().SetUpDriver(_config);
         }
 
-        public /*IWebDriver*/ RemoteWebDriver GetDriverInstance()
+        public IWebDriver /*RemoteWebDriver*/ GetDriverInstance()
         {
             var baseChromeOptions = new ChromeOptions();
 
@@ -25,10 +27,9 @@ namespace UI.Driver.Strategy
             baseChromeOptions.AddArgument("--start-maximized");
             baseChromeOptions.AddUserProfilePreference("intl.accept_languages", "nl");
             baseChromeOptions.AddUserProfilePreference("disable-popup-blocking", "true");
-            baseChromeOptions.AddAdditionalCapability("enableLog", true, true);
-            baseChromeOptions.AddAdditionalCapability("enableVideo", true, true);
-            RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), baseChromeOptions);
-            return driver;
+            //baseChromeOptions.AddAdditionalCapability("enableLog", true, true);
+            //baseChromeOptions.AddAdditionalCapability("enableVideo", true, true);
+            return new ChromeDriver(Directory.GetCurrentDirectory(), baseChromeOptions, TimeSpan.FromMinutes(10));
         }
 
         public IDriverConfig GetDriverConfig()

@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Configuration;
 using UI;
 using UI.Driver;
 using UI.Pages;
