@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace Tests.StepDefinitions
 {
+
     [Binding]
     public class AddNumbersSteps
     {

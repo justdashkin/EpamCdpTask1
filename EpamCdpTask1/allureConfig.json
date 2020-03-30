@@ -1,0 +1,27 @@
+{
+  "allure": {
+    "directory": "allure-results",
+    "links": []
+  },
+
+  "specflow": {
+    "stepArguments": {
+      "convertToParameters": "true",
+      "paramNameRegex": "^a.*",
+      "paramValueRegex": "^v.*"
+    },
+
+    "links": {
+      "issue": "^issue:(.+)",
+      "link": "^link:(.+)"
+    },
+
+    "grouping": {
+      "suites": {
+        "parentSuite": "^parentSuite:?(.+)",
+        "suite": "^suite:?(.+)",
+        "subSuite": "^subSuite:?(.+)"
+      }
+    }
+  }
+}

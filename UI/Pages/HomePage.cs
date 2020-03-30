@@ -16,6 +16,6 @@ namespace UI.Pages
             return this;
         }
 
-        public WebElement HomePageLogo = new WebElement(By.XPath("//img[@class='header__logo']"), "Home Page Logo");
+        public WebElement HomePageLogo = new WebElement(By.XPath("//img[@class='header__logo12']"), "Home Page Logo");
     }
 }

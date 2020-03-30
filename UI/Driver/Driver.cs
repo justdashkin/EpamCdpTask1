@@ -22,5 +22,7 @@ namespace UI.Driver
         {
             DriverInstances.Value?.Quit();
         }
+
+        public static Screenshot TakeScreenshot() => ((ITakesScreenshot)GetDriver()).GetScreenshot();
     }
 }

@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using Allure.Commons;
+using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using TechTalk.SpecFlow;
 using UI;
 using UI.Driver;
@@ -7,17 +9,16 @@ using UI.Pages;
 namespace Tests.StepDefinitions
 {
     [Binding]
-    public class HomePageStepsDefinition
+    public class HomePageStepsDefinition: BaseTest
     {
         private HomePage _homePage;
 
         [Given(@"I open EPAM home page")]
         public void GivenIOpenEPAMHomePage()
         {
-            Configuration.Configure();
-            Driver.SetDriver();
-            _homePage = new HomePage();
-            _homePage.OpenPage();
+
+            _homePage = new HomePage().OpenPage();
+            
             Assert.True(_homePage.HomePageLogo.IsPresent(), "Home Page logo is not present");
         }
 
@@ -27,5 +28,7 @@ namespace Tests.StepDefinitions
             Assert.True(_homePage.HomePageLogo.IsPresent(), "Home Page logo is not present");
             Driver.Quit();
         }
+
+
     }
 }
